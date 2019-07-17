@@ -7,8 +7,7 @@ verify_ssl = true
 
 [packages]
 opencv-contrib-python = "*"
-numpy = "*"
-xfeatures2d = "*"
+pyinstaller = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "2.7.14"

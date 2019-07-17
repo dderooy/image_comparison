@@ -4,17 +4,11 @@ from ComputerVision import ComputerVision
 
 
 def main():
-    basepath = os.getcwd()
-    csv_input = None
-    for filename in os.listdir(basepath):
-        if filename.endswith('.csv'):
-            csv_input = filename
-            print("Using filename: " + filename)
-    if csv_input == None:
-        print("Error {}: \n No input csv file found. Please provide an input csv file")
+    if not os.path.isfile('./input_data.csv'):
+        print("\n Error {}: \n No input_data.csv file found. Please provide the input file with the exact name 'input_data.csv' \n")
 
     csv = CSVParser()
-    images = csv.get_images(csv_input)
+    images = csv.get_images("input_data.csv")
 
     computer_vision = ComputerVision()
     result_pairs = []
