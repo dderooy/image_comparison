@@ -37,7 +37,7 @@ class ComputerVision:
             matches = sorted(matches, key=lambda x: x.distance)
 
             # match.distance is a float between {0:100} - lower means more similar
-            good_matches = [match for match in matches if match.distance < 65]
+            good_matches = [match for match in matches if match.distance < 60]
             pair["similar"] = 1 - (float(len(good_matches)) / float(len(matches)))
 
             if save_image:
