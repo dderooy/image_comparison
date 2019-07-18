@@ -7,6 +7,8 @@ This program consumes a csv file of image pairs and conducts a comparison using 
 with 0 being the same image. 
 
 ### Code Workspace Setup (using a mac): 
+(**using python 2.7.14**)
+
 After cloning the repository and opening the directory in a terminal, run the below commands
 
 Pipenv: is used to control the project dependencies and python environments
