@@ -5,6 +5,7 @@ from classes.ComputerVision import ComputerVision
 
 
 def main():
+    # Read user input and check if file exists
     csv_input = None
     while csv_input != "q":
         print("\n Input Path:")
@@ -17,10 +18,12 @@ def main():
             break
     print("\n Using file: " + csv_input + "\n")
 
+    # collect image pairs from csv into a dictionary and add each dictionary to a list 'images'
+    # images = [ { "image1" : "string", "image2": "string"}, ...]
     csv = CSVParser()
     images = csv.get_images(csv_input)
 
-
+    # Compute results for each image pair
     print("\n Computing comparisons... \n")
     computer_vision = ComputerVision()
     result_pairs = []
@@ -33,6 +36,7 @@ def main():
             continue
         result_pairs.append(computer_vision.find_similarity(pair))
 
+    # get an output path to write results file to
     csv_output = None
     while csv_input != "q":
         print("\n Output Path:")

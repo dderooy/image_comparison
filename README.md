@@ -55,4 +55,13 @@ pyinstaller CompareImages.spec
 ```
 The executable file will be located in the 'dist/image_comparison/' folder.
 
+### Improvements
+The quality of the comparison is dependent on many factors. Image size and resolution is very important since high res
+photos will have better feature detection. 
+
+The programs uses the open source ORB algorithm for feature detection, however there are other non-free algorithms that 
+exist such as SIFT and SURF. Other alternatives can always be explored. 
+
+Finally it would be nice to add a littel GUI for importing csv files into and out of the program.  
+
 

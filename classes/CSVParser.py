@@ -1,7 +1,7 @@
 import csv
 import sys
 
-
+# this class parses csv input files
 class CSVParser:
 
     def get_images(self, csv_path):

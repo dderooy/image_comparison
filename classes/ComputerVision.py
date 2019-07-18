@@ -2,9 +2,10 @@ import cv2
 import time
 import os
 
-
+# This class is where the main image processing occurs
 class ComputerVision:
 
+    # This method checks if images are exactly the same size and color.
     def same_image(self, image1, image2):
         image1 = cv2.imread(image1)
         image2 = cv2.imread(image2)
@@ -16,6 +17,7 @@ class ComputerVision:
         else:
             return False
 
+    # This method consumes a dict() with image1 and image2. The results are added to the dict() and returned.
     def find_similarity(self, pair, *save_image):
         start_time = time.time()
 
@@ -40,6 +42,8 @@ class ComputerVision:
             good_matches = [match for match in matches if match.distance < 60]
             pair["similar"] = 1 - (float(len(good_matches)) / float(len(matches)))
 
+            # if save_image flag is true it will save the image jpegs to a folder 'img_results'
+            # This is how I got the rubix cube picture on the readme page.
             if save_image:
                 image1 = cv2.imread(pair["image1"])
                 image2 = cv2.imread(pair["image2"])
