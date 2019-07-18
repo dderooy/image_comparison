@@ -1,4 +1,5 @@
 import csv
+import sys
 
 
 class CSVParser:
@@ -10,14 +11,17 @@ class CSVParser:
             line_count = 1
             for row in csv_reader:
                 pair = {}
+                if "image1" not in row or "image2" not in row:
+                    print("Input CSV file is empty or improperly formatted. Please restart the program and use a different file")
+                    sys.exit()
                 pair["image1"] = row["image1"]
                 pair["image2"] = row["image2"]
                 pairs.append(pair)
                 line_count += 1
             return pairs
 
-    def write_results_file(self, pairs):
-        with open('results.csv', mode='w') as results:
+    def write_results_file(self, pairs, path):
+        with open(path + '/results.csv', mode='w') as results:
             results_writer = csv.writer(results, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
             results_writer.writerow(['image1', 'image2', 'similar', 'elapsed'])

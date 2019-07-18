@@ -3,8 +3,8 @@ import unittest
 import os
 import csv
 
-from CSVParser import CSVParser
-from ComputerVision import ComputerVision
+from classes.CSVParser import CSVParser
+from classes.ComputerVision import ComputerVision
 
 
 def get_path():
