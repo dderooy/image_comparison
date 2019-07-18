@@ -73,7 +73,8 @@ class TestAll(unittest.TestCase):
         for pair in images:
             result_pairs.append(computer_vision.find_similarity(pair))
 
-        csv.write_results_file(result_pairs)
+        basepath = get_path()
+        csv.write_results_file(result_pairs, basepath)
 
 
 if __name__ == '__main__':
