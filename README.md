@@ -51,8 +51,8 @@ sudo pip install pyinstaller
 This will create an executable file depending on the OS being used. (since I don't have a windows machine
 I can only create mac executable files)
 ```bash
-pyinstaller -F CompareImages.spec
+pyinstaller CompareImages.spec
 ```
-The executable file will be located in the 'dist/image_comparison' folder.
+The executable file will be located in the 'dist/image_comparison/' folder.
 
 
